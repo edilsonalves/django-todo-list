@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Django To-do List</title>
+  </head>
+  <body>
+    <h1>Django To-do List</h1>
+    <p>A simple to-do list app in Django</p>
+    <ul>
+      {% for todo in todos %}
+        <li>{{ todo.content }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
