@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from . import models
 
@@ -9,3 +10,11 @@ def index(request):
     }
 
     return render(request, 'app_todo/index.html', context)
+
+
+def create(request):
+    todo = models.TodoItem()
+    todo.content = request.POST['content']
+    todo.save()
+
+    return HttpResponseRedirect('/')
