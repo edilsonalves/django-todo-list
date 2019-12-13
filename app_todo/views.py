@@ -18,3 +18,10 @@ def create(request):
     todo.save()
 
     return HttpResponseRedirect('/')
+
+
+def delete(request, todo_id):
+    todo = models.TodoItem.objects.get(id=todo_id)
+    todo.delete()
+
+    return HttpResponseRedirect('/')
